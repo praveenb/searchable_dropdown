@@ -25,6 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'bsi.iceman.searchable_dropdown'
     compileSdkVersion 31
 
     sourceSets {
@@ -36,6 +37,12 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 

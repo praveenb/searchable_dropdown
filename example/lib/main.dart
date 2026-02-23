@@ -26,7 +26,7 @@ class ExampleNumber {
   };
 
   String get numberString {
-    return (map.containsKey(number) ? map[number] : "unknown");
+    return (map.containsKey(number) ? map[number] ?? "" : "unknown");
   }
 
   ExampleNumber(this.number);
@@ -51,9 +51,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool asTabs = false;
-  String selectedValue;
+  String? selectedValue;
   String preselectedValue = "dolor sit";
-  ExampleNumber selectedNumber;
+  ExampleNumber? selectedNumber;
   List<int> selectedItems = [];
   final List<DropdownMenuItem> items = [];
 
@@ -241,7 +241,7 @@ class _MyAppState extends State<MyApp> {
         closeButton: null,
         style: TextStyle(fontStyle: FontStyle.italic),
         searchFn: (String keyword, items) {
-          List<int> ret = List<int>();
+          List<int> ret = <int>[];
           if (keyword != null && items != null && keyword.isNotEmpty) {
             keyword.split(" ").forEach((k) {
               int i = 0;
