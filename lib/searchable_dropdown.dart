@@ -991,6 +991,8 @@ class _DropdownDialogState<T> extends State<DropdownDialog> {
                   widget.selectedItems?.add(shownIndexes[index]);
                   if (widget.doneButton == null) {
                     pop();
+                  }else if (widget.doneButton == 'Close') {
+                    pop();
                   } else {
                     setState(() {});
                   }

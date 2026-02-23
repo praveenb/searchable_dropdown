@@ -113,6 +113,7 @@ class _MyAppState extends State<MyApp> {
         value: selectedValue,
         hint: "Select one",
         searchHint: "Select one",
+        doneButton: 'Close',
         onChanged: (value) {
           setState(() {
             selectedValue = value;
